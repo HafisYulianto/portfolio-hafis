@@ -16,22 +16,29 @@ const Navbar = () => {
   }, []);
 
   const navLinks = [
-    { name: "About", href: "#about" },
+    { name: "Home", href: "#home" },
     { name: "Skills", href: "#skills" },
+    { name: "Experience", href: "#experience" },
     { name: "Projects", href: "#projects" },
     { name: "Contact", href: "#contact" },
   ];
 
   return (
-    <nav
-      className={`fixed w-full z-50 transition-all duration-300 ${
-        scrolled ? "bg-gray-900/80 backdrop-blur-md py-4 shadow-lg" : "bg-transparent py-6"
+    <header
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex justify-center px-4 ${
+        scrolled ? "pt-4" : "pt-6"
       }`}
     >
-      <div className="container mx-auto px-6 flex justify-between items-center">
+      <div 
+        className={`flex justify-between items-center transition-all duration-500 mx-auto ${
+          scrolled 
+            ? "w-full max-w-4xl bg-[#030712]/80 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-3 shadow-[0_20px_40px_rgba(0,0,0,0.8)]" 
+            : "w-full container px-2 py-2 bg-transparent"
+        }`}
+      >
         {/* Logo / Nama */}
-        <a href="#" className="text-2xl font-bold bg-gradient-to-r from-blue-400 to-purple-500 bg-clip-text text-transparent">
-          H<span className="text-white">Y</span>
+        <a href="#" className="text-3xl font-extrabold tracking-tighter bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 bg-clip-text text-transparent hover:scale-105 transition-transform flex items-center">
+          H <span className="text-white"> y</span><span className="text-blue-500"></span>
         </a>
 
         {/* Menu Desktop */}
@@ -40,9 +47,10 @@ const Navbar = () => {
             <a
               key={link.name}
               href={link.href}
-              className="text-gray-300 hover:text-blue-400 transition-colors font-medium"
+              className="text-gray-400 hover:text-white transition-all font-medium tracking-wide relative group"
             >
               {link.name}
+              <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-500 to-purple-500 group-hover:w-full transition-all duration-300"></span>
             </a>
           ))}
         </div>
@@ -79,7 +87,7 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
-    </nav>
+    </header>
   );
 };
 

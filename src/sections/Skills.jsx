@@ -4,7 +4,7 @@ import { skills } from "../data"; // Ambil data skills dari file data
 
 const Skills = () => {
   return (
-    <section id="skills" className="py-20 bg-gray-900 text-white">
+    <section id="skills" className="py-20 bg-slate-950 border-t border-white/5 shadow-inner text-white relative z-10 scroll-mt-24">
       <div className="container mx-auto px-6">
         
         {/* Judul Section */}
@@ -15,43 +15,33 @@ const Skills = () => {
           viewport={{ once: true }} // Animasi cuma jalan sekali pas discroll
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4">Skills</h2>
-          <div className="w-20 h-1 bg-blue-500 mx-auto rounded-full"></div>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent inline-block">Skills</h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mx-auto rounded-full"></div>
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
             Tools dan teknologi yang saya gunakan.
           </p>
         </motion.div>
 
         {/* Grid Card Skills */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
           {skills.map((skill, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              transition={{ 
+                type: "spring", 
+                stiffness: 260, 
+                damping: 20, 
+                delay: index * 0.1 
+              }}
               viewport={{ once: true }}
-              className="bg-gray-800/50 p-8 rounded-2xl border border-gray-700 hover:border-blue-500/50 transition-colors group"
+              className="flex flex-col items-center justify-center bg-gradient-to-br from-white/[0.05] to-transparent backdrop-blur-md p-6 rounded-2xl border border-white/[0.05] hover:border-orange-500/50 hover:shadow-[0_0_30px_rgba(249,115,22,0.15)] hover:bg-white/[0.08] hover:-translate-y-2 transition-all duration-300 group gap-4"
             >
-              {/* Header Card (Icon & Judul) */}
-              <div className="flex items-center gap-4 mb-6">
-                <div className="p-3 bg-blue-500/10 rounded-lg text-blue-400 group-hover:bg-blue-500 group-hover:text-white transition-all">
-                  <skill.icon size={32} />
-                </div>
-                <h3 className="text-xl font-bold">{skill.category}</h3>
+              <div className="w-16 h-16 flex items-center justify-center transition-transform group-hover:scale-110">
+                <img src={skill.icon} alt={skill.name} className="w-full h-full object-contain" />
               </div>
-
-              {/* List Item Skill (Badges) */}
-              <div className="flex flex-wrap gap-3">
-                {skill.items.map((item, idx) => (
-                  <span
-                    key={idx}
-                    className="px-4 py-2 bg-gray-900 rounded-lg text-gray-300 text-sm border border-gray-700 hover:text-blue-400 hover:border-blue-400/50 transition-all cursor-default"
-                  >
-                    {item}
-                  </span>
-                ))}
-              </div>
+              <h3 className="text-sm font-medium text-gray-300 group-hover:text-white transition-colors text-center">{skill.name}</h3>
             </motion.div>
           ))}
         </div>

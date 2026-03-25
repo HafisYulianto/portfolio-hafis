@@ -5,7 +5,7 @@ import { personalData } from "../data";
 
 const Contact = () => {
   return (
-    <section id="contact" className="py-20 bg-gradient-to-b from-gray-950 to-gray-900 text-white">
+    <footer id="contact" className="py-20 bg-gradient-to-b from-transparent to-black text-white relative scroll-mt-24">
       <div className="container mx-auto px-6 text-center">
         
         {/* Judul & Ajakan */}
@@ -28,7 +28,7 @@ const Contact = () => {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=hafisyulianto540@gmail.com&su=Tawaran%20Kerjasama&body=Halo%20Hafis,%20saya%20tertarik%20untuk%20mendiskusikan%20project..."
             target="_blank" // Membuka di tab baru
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-full font-bold text-lg transition-all shadow-lg hover:shadow-blue-500/50 hover:-translate-y-1"
+            className="inline-flex items-center gap-2 bg-blue-600/90 backdrop-blur-md hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)] hover:-translate-y-1 border border-blue-400/30"
           >
             <Mail size={24} />
             Hubungi Saya
@@ -62,7 +62,7 @@ const Contact = () => {
         </div>
 
       </div>
-    </section>
+    </footer>
   );
 };
 

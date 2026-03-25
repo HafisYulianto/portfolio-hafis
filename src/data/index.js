@@ -3,14 +3,8 @@ import {
   Github, 
   Linkedin, 
   Instagram, 
-  Facebook,
-  Layout, 
-  Database, 
-  Server, 
-  PenTool, 
-  CheckCircle, 
-  Cpu 
-} from "lucide-react"; 
+  Facebook
+} from "lucide-react";
 
 // GANTI BARIS IMPORT FOTO MENJADI INI:
 import profileImg from '../assets/profile.jpg'; // <--- Perhatikan akhiran .jpg
@@ -27,7 +21,7 @@ export const personalData = {
   // --- TAMBAHAN BARU: FOTO PROFIL ---
   profileImage: profileImg, 
   
-  description: "Mahasiswa yang fokus membangun website interaktif dengan React dan mendesain antarmuka modern.",
+  description: "Mahasiswa yang berfokus pada pengembangan website modern.",
   socials: [
     {
       name: "GitHub",
@@ -51,52 +45,14 @@ export const personalData = {
 // 2. SKILLS / KEAHLIAN
 // =================================================================================
 export const skills = [
-  {
-    category: "Frontend Developer",
-    items: [
-      "JavaScript (ES6+)",
-      "React.js",
-      "Vue.js",
-      "Tailwind CSS",
-      "HTML5/CSS3",
-      "Responsive Web Design"
-    ],
-    icon: Layout,
-  },
-  {
-    category: "UI/UX Designer",
-    items: [
-      "UI Design",
-      "UX Research",
-      "Wireframing",
-      "Prototyping",
-      "Design System",
-      "Figma"
-    ],
-    icon: PenTool,
-  },
-  {
-    category: "Quality Assurance",
-    items: [
-      "Manual Testing",
-      "Test Case Writing",
-      "Bug Reporting",
-      "UI/UX Testing",
-      "Functional Testing"
-    ],
-    icon: CheckCircle,
-  },
-  {
-    category: "Robotics",
-    items: [
-      "Arduino",
-      "ESP32",
-      "Sensor Integration",
-      "Embedded Programming",
-      "Autonomous System"
-    ],
-    icon: Cpu,
-  },
+  { name: "JavaScript", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/javascript/javascript-original.svg" },
+  { name: "React.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/react/react-original.svg" },
+  { name: "Vue.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/vuejs/vuejs-original.svg" },
+  { name: "Next.js", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/nextjs/nextjs-original.svg" },
+  { name: "Tailwind CSS", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/tailwindcss/tailwindcss-original.svg" },
+  { name: "HTML5", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/html5/html5-original.svg" },
+  { name: "CSS3", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/css3/css3-original.svg" },
+  { name: "Figma", icon: "https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/figma/figma-original.svg" }
 ];
 
 
@@ -151,7 +107,7 @@ export const achievements = [
     year: "2025",
     desc: "Kompetisi Web Programming dengan website yang di buat, SiLapor (Sistem Lampung Melapor).",
   },
-    {
+  {
     id: 2,
     title: "Juara 1 Wilayah 1 KRTI - Divisi VTOL",
     issuer: "Puspresnas",
@@ -164,15 +120,20 @@ export const achievements = [
     issuer: "Puspresnas",
     year: "2024",
     desc: "Mengembangkan drone SAR hybrid yang mampu beroperasi di dua medan, darat dan udara, serta dilengkapi sistem deteksi untuk mengidentifikasi keberadaan manusia.",
-  },
-  {
-  id: 4,
-  title: "Sertifikasi Junior Web Development",
-  issuer: "Komdigi",
-  year: "2025",
-  desc: "Sertifikasi kompetensi di bidang pengembangan web yang mencakup dasar frontend, backend, serta penerapan standar pengembangan aplikasi web."
-},
+  }
+];
 
+// =================================================================================
+// 4b. SERTIFIKASI / CERTIFICATIONS
+// =================================================================================
+export const certifications = [
+  {
+    id: 1,
+    title: "Sertifikasi Junior Web Development",
+    issuer: "Komdigi",
+    year: "2025",
+    desc: "Sertifikasi kompetensi di bidang pengembangan web yang mencakup dasar frontend, backend, serta penerapan standar pengembangan aplikasi web."
+  }
 ];
 
 // =================================================================================

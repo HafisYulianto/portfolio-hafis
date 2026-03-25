@@ -5,7 +5,7 @@ import { projects } from "../data"; // Import Datanya
 
 const Projects = () => {
   return (
-    <section id="projects" className="py-20 bg-gray-950">
+    <section id="projects" className="py-20 bg-[#0a0a0f] border-t border-white/5 relative z-10 scroll-mt-24">
       <div className="container mx-auto px-6">
         
         {/* Judul Section */}
@@ -15,10 +15,10 @@ const Projects = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-fuchsia-400 to-purple-600 bg-clip-text text-transparent inline-block">
             Projects
           </h2>
-          <div className="w-20 h-1 bg-purple-500 mx-auto rounded-full"></div>
+          <div className="w-20 h-1 bg-gradient-to-r from-fuchsia-400 to-purple-600 mx-auto rounded-full"></div>
           <p className="text-gray-400 mt-4">
             Beberapa hasil yang pernah saya dan Tim kerjakan.
           </p>
