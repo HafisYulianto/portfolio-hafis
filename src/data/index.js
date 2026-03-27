@@ -8,6 +8,7 @@ import {
 
 // GANTI BARIS IMPORT FOTO MENJADI INI:
 import profileImg from '../assets/profile.jpg'; // <--- Perhatikan akhiran .jpg
+import aeroSuohImg from '../assets/aerosuoh.png';
 
 
 
@@ -16,7 +17,7 @@ import profileImg from '../assets/profile.jpg'; // <--- Perhatikan akhiran .jpg
 // =================================================================================
 export const personalData = {
   name: "Hafis Yulianto",
-  role: "Frontend Developer | UI/UX Designer | Quality Assurance",
+  role: "Web Developer | UI/UX Designer | Quality Assurance | Drone Pilot",
   
   // --- TAMBAHAN BARU: FOTO PROFIL ---
   profileImage: profileImg, 
@@ -129,10 +130,17 @@ export const achievements = [
 export const certifications = [
   {
     id: 1,
-    title: "Sertifikasi Junior Web Development",
-    issuer: "Komdigi",
+    title: "Sertifikasi Junior Web Developer",
+    issuer: "BNSP - Badan Nasional Sertifikasi Profesi",
     year: "2025",
     desc: "Sertifikasi kompetensi di bidang pengembangan web yang mencakup dasar frontend, backend, serta penerapan standar pengembangan aplikasi web."
+  },
+  {
+    id: 2,
+    title: "Sertifikasi Pilot Drone Profesional",
+    issuer: "APDI - Asosiasi Pilot Drone Indonesia",
+    year: "2025",
+    desc: "Sertifikasi kompetensi di bidang pilot drone yang mencakup dasar drone, serta kompetensi teknis, mematuhi regulasi penerbangan, dan menjamin keselamatan operasional."
   }
 ];
 
@@ -142,38 +150,13 @@ export const certifications = [
 export const projects = [
   {
     id: 1,
-    title: "ArkWork – UI/UX & QA Platform SDM Energi",
-    desc: "Platform digital pengembangan ekosistem SDM sektor energi dan migas. Berperan sebagai UI/UX Designer dan Quality Assurance untuk memastikan desain konsisten, usability optimal, dan sistem siap launching.",
-    image: "https://images.unsplash.com/photo-1559028012-481c04fa702d?w=800&q=80",
-    tags: ["UI/UX", "QA", "Figma", "Web App"],
+    title: "AeroSuoh",
+    desc: "Platform pariwisata pintar dan dasbor pemantauan geotermal masa depan untuk kawasan Suoh.",
+    // NOTE: Untuk menambahkan foto nanti, import foto di atas file ini lalu ganti 'null' di bawah dengan nama variabel fotonya.
+    // Contoh: image: fotoAeroSuoh
+    image: aeroSuohImg, 
+    tags: ["Web Dev", "Pariwisata", "Dashboard"],
     github: null,
-    demo: null,
-  },
-  {
-    id: 2,
-    title: "VTOL UAV KRTI – Autonomous Pick & Drop",
-    desc: "Pengembangan wahana UAV VTOL autonomous untuk KRTI dengan kemampuan lepas landas vertikal, terbang horizontal, serta sistem pick and drop payload otomatis.",
-    image: "https://images.unsplash.com/photo-1508614589041-895b88991e3e?w=800&q=80",
-    tags: ["VTOL", "Robotics", "Autonomous System", "KRTI"],
-    github: null,
-    demo: null,
-  },
-  {
-    id: 3,
-    title: "Drone SAR Hybrid (Darat & Udara)",
-    desc: "Drone SAR hybrid yang mampu beroperasi di dua medan (darat dan udara) serta dilengkapi sistem deteksi untuk mengidentifikasi keberadaan manusia dalam misi pencarian dan penyelamatan.",
-    image: "https://images.unsplash.com/photo-1527977966376-1c8408f9f108?w=800&q=80",
-    tags: ["SAR Drone", "Robotics", "Sensor", "Embedded"],
-    github: null,
-    demo: null,
-  },
-  {
-    id: 4,
-    title: "Web Silapor - Sistem Lampung Melapor",
-    desc: "Website pengaduan masyarakat berbasis web untuk memudahkan warga melaporkan masalah di lingkungan mereka secara online.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80",
-    tags: ["Frontend", "Firebase", "JavaScript", "Web App"],
-    github: null,
-    demo: null,
-  },
+    demo: "https://aero-suoh.vercel.app/",
+  }
 ];
