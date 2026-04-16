@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { motion, useScroll, useSpring } from 'framer-motion';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import Skills from './sections/Skills';
@@ -9,8 +10,20 @@ import Contact from './sections/Contact';
 import BackToTop from './components/BackToTop';
 
 function App() {
+  const { scrollYProgress } = useScroll();
+  const scaleX = useSpring(scrollYProgress, {
+    stiffness: 100,
+    damping: 30,
+    restDelta: 0.001
+  });
+
   return (
     <div className="relative min-h-screen bg-black text-gray-200 overflow-hidden font-sans">
+      {/* Scroll Progress Bar */}
+      <motion.div 
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 origin-left z-[100] shadow-[0_0_15px_rgba(59,130,246,1)]"
+        style={{ scaleX }}
+      />
       {/* Background Orbs with HW acceleration */}
       <div className="fixed top-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-blue-900/20 blur-[120px] pointer-events-none animate-blob will-change-transform"></div>
       <div className="fixed bottom-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-purple-900/20 blur-[120px] pointer-events-none animate-blob will-change-transform" style={{ animationDelay: '2s' }}></div>

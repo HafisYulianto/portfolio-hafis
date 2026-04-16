@@ -1,10 +1,24 @@
-import React, { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import React, { useState, useEffect, useRef } from "react";
+import { Menu, X, Volume2, VolumeX } from "lucide-react";
+import bgMusic from '../assets/bg-music.mp3';
 import { motion, AnimatePresence } from "framer-motion";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [isPlaying, setIsPlaying] = useState(false);
+  const audioRef = useRef(null);
+
+  const toggleMusic = () => {
+    if (audioRef.current) {
+      if (isPlaying) {
+        audioRef.current.pause();
+      } else {
+        audioRef.current.play();
+      }
+      setIsPlaying(!isPlaying);
+    }
+  };
 
   // Efek navbar berubah warna saat discroll
   useEffect(() => {
@@ -55,11 +69,22 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Tombol Hamburger (Mobile) */}
-        <div className="md:hidden">
-          <button onClick={() => setIsOpen(!isOpen)} className="text-white">
-            {isOpen ? <X size={28} /> : <Menu size={28} />}
+        {/* Tombol Kanan (Music & Hamburger) */}
+        <div className="flex items-center gap-4">
+          <button 
+            onClick={toggleMusic} 
+            className="text-gray-300 hover:text-white transition-colors p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10"
+            title="Play/Pause Music"
+          >
+            {isPlaying ? <Volume2 size={20} className="text-blue-400" /> : <VolumeX size={20} />}
           </button>
+
+          {/* Tombol Hamburger (Mobile) */}
+          <div className="md:hidden">
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2">
+              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            </button>
+          </div>
         </div>
       </div>
 
@@ -87,6 +112,9 @@ const Navbar = () => {
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Elemen Musik */}
+      <audio ref={audioRef} src={bgMusic} loop />
     </header>
   );
 };

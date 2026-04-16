@@ -4,6 +4,30 @@ import { ArrowDown } from "lucide-react"; // Import icon biasa
 import { personalData } from "../data";   // Import data
 
 const Hero = () => {
+  const nameLetters = personalData.name.split("");
+
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.08, delayChildren: 0.2 },
+    },
+  };
+
+  const letterVariants = {
+    visible: {
+      opacity: 1,
+      y: 0,
+      rotateX: 0,
+      transition: { type: "spring", damping: 12, stiffness: 200 },
+    },
+    hidden: {
+      opacity: 0,
+      y: 50,
+      rotateX: -90,
+    },
+  };
+
   return (
     <section
       id="home"
@@ -50,14 +74,23 @@ const Hero = () => {
             Halo, saya
           </motion.p>
 
-          {/* Nama */}
+          {/* Nama - Cinematic Reveal */}
           <motion.h1
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-white to-gray-500 mb-4 drop-shadow-2xl"
+            variants={containerVariants}
+            initial="hidden"
+            animate="visible"
+            className="flex justify-center md:justify-start flex-wrap text-5xl md:text-7xl font-extrabold text-transparent bg-clip-text bg-gradient-to-r from-gray-100 via-white to-gray-500 mb-4 drop-shadow-2xl"
           >
-            {personalData.name}
+            {nameLetters.map((letter, index) => (
+              <motion.span 
+                key={index} 
+                variants={letterVariants} 
+                className="inline-block"
+                style={{ WebkitTextFillColor: "transparent" }} // Supaya gradient tetap masuk ke huruf
+              >
+                {letter === " " ? "\u00A0" : letter}
+              </motion.span>
+            ))}
           </motion.h1>
 
           {/* Role */}
