@@ -10,6 +10,7 @@ import {
 import profileImg from '../assets/profile.jpg'; // <--- Perhatikan akhiran .jpg
 import aeroSuohImg from '../assets/aerosuoh.png';
 import sertifHimaIfImg from '../assets/sertifHimaIf.png';
+import teknoComImg from '../assets/teknoCom.png';
 
 
 
@@ -168,6 +169,15 @@ export const projects = [
     tags: ["Web Dev", "Sertifikat Generator", "Client-Side"],
     github: null,
     demo: "https://sertifikat-generator-hima-informati.vercel.app/",
+  },
+  {
+    id: 3,
+    title: "TeknoCom",
+    desc: "Platform informasi berbasis web untuk mempromosikan kegiatan dan informasi seputar kompetisi International dibidang IT",
+    image: teknoComImg,
+    tags: ["Web Dev", "Informasi Kompetisi", "International"],
+    github: null,
+    demo: "https://teknocom.teknokrat.ac.id/",
   }
 ];
 
