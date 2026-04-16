@@ -11,6 +11,7 @@ import profileImg from '../assets/profile.jpg'; // <--- Perhatikan akhiran .jpg
 import aeroSuohImg from '../assets/aerosuoh.png';
 import sertifHimaIfImg from '../assets/sertifHimaIf.png';
 import teknoComImg from '../assets/teknocom.png';
+import cvBuilderImg from '../assets/cv-builder.png';
 
 
 
@@ -178,6 +179,15 @@ export const projects = [
     tags: ["Web Dev", "Informasi Kompetisi", "International"],
     github: null,
     demo: "https://teknocom.teknokrat.ac.id/",
+  },
+  {
+    id: 4,
+    title: "Cv-Builder",
+    desc: "Web app ringan untuk membuat CV secara cepat: isi form di kiri, lihat preview real‑time di kanan, pilih tema & template, lalu ekspor ke PDF. Data otomatis tersimpan di browser (localStorage).",
+    image: cvBuilderImg,
+    tags: ["Web Dev", "Cv-Builder", "Auto-Generate"],
+    github: null,
+    demo: "https://cv-builder-by-hy.vercel.app/",
   }
 ];
 
