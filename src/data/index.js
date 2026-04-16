@@ -9,6 +9,7 @@ import {
 // GANTI BARIS IMPORT FOTO MENJADI INI:
 import profileImg from '../assets/profile.jpg'; // <--- Perhatikan akhiran .jpg
 import aeroSuohImg from '../assets/aerosuoh.png';
+import sertifHimaIfImg from '../assets/sertifHimaIf.png';
 
 
 
@@ -158,5 +159,17 @@ export const projects = [
     tags: ["Web Dev", "Pariwisata", "Dashboard"],
     github: null,
     demo: "https://aero-suoh.vercel.app/",
+  },
+  {
+    id: 2,
+    title: "Sertifikat Generator",
+    desc: "Aplikasi web berbasis Client-Side murni untuk membuat dan mengunduh ratusan sertifikat secara otomatis. Dibuat khusus untuk mempermudah panitia kegiatan HIMA Informatika Universitas Teknokrat Indonesia (UTI).",
+    image: sertifHimaIfImg,
+    tags: ["Web Dev", "Sertifikat Generator", "Client-Side"],
+    github: null,
+    demo: "https://sertifikat-generator-hima-informati.vercel.app/",
   }
 ];
+
+
+
