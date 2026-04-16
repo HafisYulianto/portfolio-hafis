@@ -10,7 +10,7 @@ import {
 import profileImg from '../assets/profile.jpg'; // <--- Perhatikan akhiran .jpg
 import aeroSuohImg from '../assets/aerosuoh.png';
 import sertifHimaIfImg from '../assets/sertifHimaIf.png';
-import teknoComImg from '../assets/teknoCom.png';
+import teknoComImg from '../assets/teknocom.png';
 
 
 
