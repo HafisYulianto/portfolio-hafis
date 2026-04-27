@@ -81,6 +81,3 @@ Seorang *Web Developer, UI/UX Designer, Quality Assurance,* dan *Pilot Drone Pro
 *   **GitHub:** [@hafisyulianto](https://github.com/hafisyulianto)
 *   **LinkedIn:** [Hafis Yulianto](https://linkedin.com/in/hafisyulianto)
 *   **Instagram:** [@hafisyulianto_](https://instagram.com/hafisyulianto_)
-
----
-*README ini dihasilkan untuk memastikan dokumentasi portofolio se-premium visualnya!* ✨
