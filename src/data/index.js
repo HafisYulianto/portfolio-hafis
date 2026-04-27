@@ -193,15 +193,6 @@ export const projects = [
   },
   {
     id: 5,
-    title: "AeroSuoh",
-    desc: "Platform pariwisata pintar dan dasbor pemantauan geotermal masa depan untuk kawasan Suoh.",
-    image: aeroSuohImg, 
-    tags: ["Web Dev", "Pariwisata", "Dashboard"],
-    github: null,
-    demo: "https://aero-suoh.vercel.app/",
-  },
-  {
-    id: 6,
     title: "Transparansi Skor & Kinerja",
     desc: "Platform digital untuk memantau keaktifan dan kontribusi seluruh anggota HIMA Informatika secara real-time.",
     image: transparansiSkorKinerjaImg, 
