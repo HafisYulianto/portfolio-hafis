@@ -24,11 +24,13 @@ const Projects = () => {
           </p>
         </motion.div>
 
-        {/* Grid Project */}
+        {/* Flex Project (untuk center item ganjil) */}
         {projects.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="flex flex-wrap justify-center gap-8">
             {projects.map((project, index) => (
-              <ProjectCard key={project.id} project={project} index={index} />
+              <div key={project.id} className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.34rem)]">
+                <ProjectCard project={project} index={index} />
+              </div>
             ))}
           </div>
         ) : (

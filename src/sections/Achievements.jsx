@@ -19,8 +19,8 @@ const Achievements = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-amber-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        {/* Grid Prestasi */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto mb-16">
+        {/* Flex Prestasi (untuk center item ganjil) */}
+        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto mb-16">
           {achievements.map((item, index) => (
             <motion.div
               key={item.id}
@@ -28,7 +28,7 @@ const Achievements = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/[0.02] backdrop-blur-md p-6 rounded-2xl border border-white/[0.05] shadow-xl flex items-start gap-4 hover:border-yellow-500/50 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300"
+              className="w-full md:w-[calc(50%-0.75rem)] bg-white/[0.02] backdrop-blur-md p-6 rounded-2xl border border-white/[0.05] shadow-xl flex items-start gap-4 hover:border-yellow-500/50 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300"
             >
               <div className="p-3 bg-yellow-500/10 rounded-full text-yellow-500 shrink-0">
                 <Trophy size={24} />
@@ -55,8 +55,8 @@ const Achievements = () => {
           <div className="w-20 h-1 bg-gradient-to-r from-sky-300 to-blue-500 mx-auto rounded-full"></div>
         </motion.div>
 
-        {/* Grid Sertifikasi */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
+        {/* Flex Sertifikasi (untuk center item ganjil) */}
+        <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
           {certifications.map((item, index) => (
             <motion.div
               key={item.id}
@@ -64,7 +64,7 @@ const Achievements = () => {
               whileInView={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white/[0.02] backdrop-blur-md p-6 rounded-2xl border border-white/[0.05] shadow-xl flex items-start gap-4 hover:border-blue-500/50 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300"
+              className="w-full md:w-[calc(50%-0.75rem)] bg-white/[0.02] backdrop-blur-md p-6 rounded-2xl border border-white/[0.05] shadow-xl flex items-start gap-4 hover:border-blue-500/50 hover:bg-white/[0.04] hover:-translate-y-1 transition-all duration-300"
             >
               <div className="p-3 bg-blue-500/10 rounded-full text-blue-500 shrink-0">
                 <Award size={24} />
