@@ -8,14 +8,29 @@ import Achievements from './sections/Achievements'; // <--- Wajib ada
 import Projects from './sections/Projects';
 import Contact from './sections/Contact';
 import BackToTop from './components/BackToTop';
+import Preloader from './components/Preloader';
+import About from './sections/About';
 
 function App() {
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 2000); // Durasi preloader 2 detik
+    return () => clearTimeout(timer);
+  }, []);
+
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
+
+  if (isLoading) {
+    return <Preloader />;
+  }
 
   return (
     <div className="relative min-h-screen bg-black text-gray-200 overflow-hidden font-sans">
@@ -35,6 +50,7 @@ function App() {
       <main className="relative z-10">
         <Navbar />
         <Hero />
+        <About />
         <Skills />
         <Experience />
         <Achievements />

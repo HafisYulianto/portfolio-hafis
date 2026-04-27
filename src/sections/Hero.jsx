@@ -126,6 +126,15 @@ const Hero = () => {
             >
               Lihat Project <ArrowDown size={20} />
             </a>
+            
+            {/* Tombol Download CV */}
+            <a
+              href="/CV_HafisYulianto.pdf"
+              download
+              className="bg-gray-800/80 backdrop-blur-md hover:bg-gray-700 text-white px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(255,255,255,0.1)] hover:shadow-[0_0_25px_rgba(255,255,255,0.2)] flex items-center gap-2 border border-gray-600/50"
+            >
+              Download CV
+            </a>
 
             <div className="flex gap-4">
               {personalData.socials.map((social, index) => (
