@@ -1,6 +1,7 @@
 # ✨ Premium React Portfolio - Hafis Yulianto
 
-![Portfolio Preview](https://via.placeholder.com/1000x500.png?text=Premium+React+Portfolio+Preview)
+![Portfolio Preview](./preview.png)
+
 
 Selamat datang di repositori portofolio web premium milik **Hafis Yulianto**. Website ini dirancang khusus untuk memberikan pengalaman pengguna tingkat tinggi (High-End UX) dengan desain *glassmorphism*, animasi yang memukau, dan fitur dwibahasa (*bilingual*).
 
