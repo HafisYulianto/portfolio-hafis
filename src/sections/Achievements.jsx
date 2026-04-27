@@ -1,9 +1,12 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { Trophy, Award } from "lucide-react";
-import { achievements, certifications } from "../data"; // Mengambil data dari index.js
+import { achievements, certifications } from "../data"; 
+import { useLanguage } from "../context/LanguageContext";
 
 const Achievements = () => {
+  const { language } = useLanguage();
+
   return (
     <section id="achievements" className="py-20 bg-zinc-950 border-t border-white/5 text-white relative z-10 scroll-mt-24">
       <div className="container mx-auto px-6">
@@ -15,13 +18,15 @@ const Achievements = () => {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent inline-block">Prestasi</h2>
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-yellow-300 to-amber-500 bg-clip-text text-transparent inline-block">
+            {language === 'id' ? "Prestasi" : "Achievements"}
+          </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-yellow-300 to-amber-500 mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Flex Prestasi (untuk center item ganjil) */}
         <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto mb-16">
-          {achievements.map((item, index) => (
+          {achievements[language].map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, scale: 0.9 }}
@@ -51,13 +56,15 @@ const Achievements = () => {
           viewport={{ once: true }}
           className="text-center mb-10"
         >
-          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-sky-300 to-blue-500 bg-clip-text text-transparent inline-block">Sertifikasi</h2>
+          <h2 className="text-3xl font-bold mb-4 bg-gradient-to-r from-sky-300 to-blue-500 bg-clip-text text-transparent inline-block">
+            {language === 'id' ? "Sertifikasi" : "Certifications"}
+          </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-sky-300 to-blue-500 mx-auto rounded-full"></div>
         </motion.div>
 
         {/* Flex Sertifikasi (untuk center item ganjil) */}
         <div className="flex flex-wrap justify-center gap-6 max-w-4xl mx-auto">
-          {certifications.map((item, index) => (
+          {certifications[language].map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, scale: 0.9 }}

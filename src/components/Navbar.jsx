@@ -2,8 +2,10 @@ import React, { useState, useEffect, useRef } from "react";
 import { Menu, X, Volume2, VolumeX } from "lucide-react";
 import bgMusic from '../assets/bg-music.mp3';
 import { motion, AnimatePresence } from "framer-motion";
+import { useLanguage } from '../context/LanguageContext';
 
 const Navbar = () => {
+  const { language, toggleLanguage } = useLanguage();
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
@@ -29,7 +31,14 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navLinks = [
+  const navLinks = language === 'id' ? [
+    { name: "Beranda", href: "#home" },
+    { name: "Tentang", href: "#about" },
+    { name: "Keahlian", href: "#skills" },
+    { name: "Pengalaman", href: "#experience" },
+    { name: "Proyek", href: "#projects" },
+    { name: "Kontak", href: "#contact" },
+  ] : [
     { name: "Home", href: "#home" },
     { name: "About", href: "#about" },
     { name: "Skills", href: "#skills" },
@@ -70,14 +79,22 @@ const Navbar = () => {
           ))}
         </div>
 
-        {/* Tombol Kanan (Music & Hamburger) */}
-        <div className="flex items-center gap-4">
+        {/* Tombol Kanan (Language, Music & Hamburger) */}
+        <div className="flex items-center gap-3">
+          <button 
+            onClick={toggleLanguage} 
+            className="font-bold text-sm text-gray-300 hover:text-white transition-colors rounded-full border border-white/10 bg-white/5 hover:bg-white/10 w-9 h-9 flex items-center justify-center"
+            title="Toggle Language"
+          >
+            {language.toUpperCase()}
+          </button>
+
           <button 
             onClick={toggleMusic} 
-            className="text-gray-300 hover:text-white transition-colors p-2 rounded-full border border-white/10 bg-white/5 hover:bg-white/10"
+            className="text-gray-300 hover:text-white transition-colors rounded-full border border-white/10 bg-white/5 hover:bg-white/10 w-9 h-9 flex items-center justify-center"
             title="Play/Pause Music"
           >
-            {isPlaying ? <Volume2 size={20} className="text-blue-400" /> : <VolumeX size={20} />}
+            {isPlaying ? <Volume2 size={18} className="text-blue-400" /> : <VolumeX size={18} />}
           </button>
 
           {/* Tombol Hamburger (Mobile) */}

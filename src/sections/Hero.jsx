@@ -1,9 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react"; // Import icon biasa
-import { personalData } from "../data";   // Import data
+import { ArrowDown } from "lucide-react"; 
+import { personalData } from "../data";   
+import { useLanguage } from "../context/LanguageContext";
 
 const Hero = () => {
+  const { language } = useLanguage();
   const nameLetters = personalData.name.split("");
 
   const containerVariants = {
@@ -71,7 +73,7 @@ const Hero = () => {
             transition={{ duration: 0.5 }}
             className="text-blue-400 font-semibold tracking-wider text-sm uppercase mb-4"
           >
-            Halo, saya
+            {language === 'id' ? "Halo, saya" : "Hello, I am"}
           </motion.p>
 
           {/* Nama - Cinematic Reveal */}
@@ -100,7 +102,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.4 }}
             className="text-2xl md:text-3xl font-bold bg-gradient-to-r from-blue-400 via-indigo-500 to-purple-500 bg-clip-text text-transparent mb-6 animate-gradient"
           >
-            {personalData.role}
+            {personalData[language].role}
           </motion.h2>
 
           {/* Deskripsi */}
@@ -110,7 +112,7 @@ const Hero = () => {
             transition={{ duration: 0.5, delay: 0.6 }}
             className="text-gray-400 text-lg md:text-xl mb-10 leading-relaxed"
           >
-            {personalData.description}
+            {personalData[language].description}
           </motion.p>
 
           {/* Tombol & Sosmed */}
@@ -124,7 +126,7 @@ const Hero = () => {
               href="#projects"
               className="bg-blue-600/90 backdrop-blur-md hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold transition-all shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)] flex items-center gap-2 border border-blue-400/30"
             >
-              Lihat Project <ArrowDown size={20} />
+              {language === 'id' ? "Lihat Project" : "View Projects"} <ArrowDown size={20} />
             </a>
             
             {/* Tombol Download CV */}

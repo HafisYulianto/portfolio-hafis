@@ -2,8 +2,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { Mail, Github, Linkedin, Instagram } from "lucide-react";
 import { personalData } from "../data";
+import { useLanguage } from "../context/LanguageContext";
 
 const Contact = () => {
+  const { language } = useLanguage();
+
   return (
     <footer id="contact" className="py-20 bg-gradient-to-b from-transparent to-black text-white relative scroll-mt-24">
       <div className="container mx-auto px-6 text-center">
@@ -16,22 +19,26 @@ const Contact = () => {
           viewport={{ once: true }}
           className="max-w-2xl mx-auto mb-12"
         >
-          <h2 className="text-4xl font-bold mb-6">Tertarik Bekerja Sama?</h2>
+          <h2 className="text-4xl font-bold mb-6">
+            {language === 'id' ? "Tertarik Bekerja Sama?" : "Interested in Working Together?"}
+          </h2>
           <p className="text-gray-400 text-lg mb-8">
-            Saya selalu terbuka untuk mendiskusikan project baru, ide kreatif, 
-            atau kesempatan menjadi bagian dari tim Anda.
+            {language === 'id' 
+              ? "Saya selalu terbuka untuk mendiskusikan project baru, ide kreatif, atau kesempatan menjadi bagian dari tim Anda." 
+              : "I am always open to discussing new projects, creative ideas, or opportunities to be part of your team."}
           </p>
 
           {/* Tombol Email Besar (VERSI GMAIL DIRECT LINK) */}
           <a
-            // Link ini akan memaksa browser membuka Gmail Compose
-            href="https://mail.google.com/mail/?view=cm&fs=1&to=hafisyulianto540@gmail.com&su=Tawaran%20Kerjasama&body=Halo%20Hafis,%20saya%20tertarik%20untuk%20mendiskusikan%20project..."
-            target="_blank" // Membuka di tab baru
+            href={language === 'id' 
+              ? "https://mail.google.com/mail/?view=cm&fs=1&to=hafisyulianto540@gmail.com&su=Tawaran%20Kerjasama&body=Halo%20Hafis,%20saya%20tertarik%20untuk%20mendiskusikan%20project..." 
+              : "https://mail.google.com/mail/?view=cm&fs=1&to=hafisyulianto540@gmail.com&su=Job%20Opportunity&body=Hello%20Hafis,%20I%20am%20interested%20in%20discussing%20a%20project..."}
+            target="_blank" 
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 bg-blue-600/90 backdrop-blur-md hover:bg-blue-500 text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.4)] hover:shadow-[0_0_40px_rgba(37,99,235,0.6)] hover:-translate-y-1 border border-blue-400/30"
           >
             <Mail size={24} />
-            Hubungi Saya
+            {language === 'id' ? "Hubungi Saya" : "Contact Me"}
           </a>
         </motion.div>
 

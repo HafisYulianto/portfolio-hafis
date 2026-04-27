@@ -1,8 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { skills } from "../data"; // Ambil data skills dari file data
+import { skills } from "../data"; 
+import { useLanguage } from "../context/LanguageContext";
 
 const Skills = () => {
+  const { language } = useLanguage();
+
   return (
     <section id="skills" className="py-20 bg-slate-950 border-t border-white/5 shadow-inner text-white relative z-10 scroll-mt-24">
       <div className="container mx-auto px-6">
@@ -15,10 +18,12 @@ const Skills = () => {
           viewport={{ once: true }} // Animasi cuma jalan sekali pas discroll
           className="text-center mb-16"
         >
-          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent inline-block">Skills</h2>
+          <h2 className="text-3xl md:text-4xl font-bold mb-4 bg-gradient-to-r from-orange-400 to-yellow-400 bg-clip-text text-transparent inline-block">
+            {language === 'id' ? "Keahlian" : "Skills"}
+          </h2>
           <div className="w-20 h-1 bg-gradient-to-r from-orange-400 to-yellow-400 mx-auto rounded-full"></div>
           <p className="text-gray-400 mt-4 max-w-xl mx-auto">
-            Tools dan teknologi yang saya gunakan.
+            {language === 'id' ? "Tools dan teknologi yang saya gunakan." : "Tools and technologies I use."}
           </p>
         </motion.div>
 
