@@ -40,7 +40,7 @@ const ProjectCard = ({ project, index }) => {
   };
 
   return (
-    <div style={{ perspective: "1000px" }}>
+    <div style={{ perspective: "1000px" }} className="h-full">
       <motion.div
         ref={cardRef}
         onMouseMove={handleMouseMove}
@@ -50,7 +50,7 @@ const ProjectCard = ({ project, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       viewport={{ once: true }}
-      className="relative bg-white/[0.02] backdrop-blur-md rounded-2xl overflow-hidden border border-white/[0.05] hover:border-blue-500/50 hover:-translate-y-2 transition-transform duration-500 group shadow-[0_0_30px_rgba(0,0,0,0.5)]"
+      className="relative flex flex-col h-full bg-white/[0.02] backdrop-blur-md rounded-2xl overflow-hidden border border-white/[0.05] hover:border-blue-500/50 hover:-translate-y-2 transition-transform duration-500 group shadow-[0_0_30px_rgba(0,0,0,0.5)]"
     >
       {/* Spotlight overlay */}
       <div
@@ -105,7 +105,7 @@ const ProjectCard = ({ project, index }) => {
       </div>
 
       {/* 2. Bagian Konten Teks */}
-      <div className="p-6">
+      <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-white mb-2 group-hover:text-blue-400 transition-colors">
           {project.title}
         </h3>
@@ -114,7 +114,7 @@ const ProjectCard = ({ project, index }) => {
         </p>
         
         {/* Tags / Tech Stack */}
-        <div className="flex flex-wrap gap-2">
+        <div className="flex flex-wrap gap-2 mt-auto">
           {project.tags.map((tag, idx) => (
             <span
               key={idx}

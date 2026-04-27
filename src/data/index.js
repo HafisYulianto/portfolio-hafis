@@ -12,6 +12,8 @@ import aeroSuohImg from '../assets/aerosuoh.png';
 import sertifHimaIfImg from '../assets/sertifHimaIf.png';
 import teknoComImg from '../assets/teknocom.png';
 import cvBuilderImg from '../assets/cv-builder.png';
+import transparansiSkorKinerjaImg from '../assets/transparansiSkorKinerja.png';
+
 
 
 
@@ -188,8 +190,23 @@ export const projects = [
     tags: ["Web Dev", "Cv-Builder", "Auto-Generate"],
     github: null,
     demo: "https://cv-builder-by-hy.vercel.app/",
+  },
+  {
+    id: 5,
+    title: "AeroSuoh",
+    desc: "Platform pariwisata pintar dan dasbor pemantauan geotermal masa depan untuk kawasan Suoh.",
+    image: aeroSuohImg, 
+    tags: ["Web Dev", "Pariwisata", "Dashboard"],
+    github: null,
+    demo: "https://aero-suoh.vercel.app/",
+  },
+  {
+    id: 6,
+    title: "Transparansi Skor & Kinerja",
+    desc: "Platform digital untuk memantau keaktifan dan kontribusi seluruh anggota HIMA Informatika secara real-time.",
+    image: transparansiSkorKinerjaImg, 
+    tags: ["Web Dev", "HIMA IF", "Real-time"],
+    github: null,
+    demo: "https://app.himaif.web.id/",
   }
 ];
-
-
-
