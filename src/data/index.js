@@ -91,6 +91,13 @@ export const workExperiences = {
       company: "FSIP - Universitas Teknokrat Indonesia",
       period: "2026 - Sekarang",
       desc: "Merancang Sistem Infromasi Fakultas guna keperluan Akreditasi.",
+    },
+    {
+      id: 5,
+      role: "Asisten Dosen FTIK",
+      company: "Universitas Teknokrat Indonesia",
+      period: "2025 - Sekarang",
+      desc: "Membantu kegiatan perkuliahan dan praktikum mahasiswa di lingkungan Fakultas Teknik dan Ilmu Komputer.",
     }
   ],
   en: [
@@ -121,6 +128,13 @@ export const workExperiences = {
       company: "FSIP - Universitas Teknokrat Indonesia",
       period: "2026 - Present",
       desc: "Designed the Faculty Information System for Accreditation purposes.",
+    },
+    {
+      id: 5,
+      role: "FTIK Teaching Assistant",
+      company: "Universitas Teknokrat Indonesia",
+      period: "2025 - Present",
+      desc: "Assisted in lectures and student practicums within the Faculty of Engineering and Computer Science.",
     }
   ]
 };
@@ -405,6 +419,6 @@ export const projects = {
       tags: ["Web Dev", "Organization", "Real-time"],
       github: null,
       demo: "https://app.himaif.web.id/",
-    }
+    },
   ]
 };
