@@ -11,6 +11,7 @@ import sertifHimaIfImg from '../assets/sertifHimaIf.png';
 import teknoComImg from '../assets/teknocom.png';
 import cvBuilderImg from '../assets/cv-builder.png';
 import transparansiSkorKinerjaImg from '../assets/transparansiSkorKinerja.png';
+import blueAgencyImg from '../assets/blueAgency.png';
 
 // =================================================================================
 // 1. DATA PERSONAL
@@ -372,6 +373,15 @@ export const projects = {
       tags: ["Web Dev", "HIMA IF", "Real-time"],
       github: null,
       demo: "https://app.himaif.web.id/",
+    },
+    {
+      id: 6,
+      title: "Blue Agency",
+      desc: "Website ini adalah platform yang dirancang khusus untuk kebutuhan agensi digital. Dengan tampilan profesional dan fitur modern, Blue Agency menyediakan solusi lengkap untuk manajemen klien, proyek, dan layanan digital. Platform ini memudahkan agensi untuk menyajikan portofolio, mengelola informasi kontak, serta memudahkan klien potensial untuk berinteraksi langsung dengan tim.",
+      image: blueAgencyImg, 
+      tags: ["Web Dev", "Agensi Digital", "Modern"],
+      github: null,
+      demo: "https://bluegenc.vercel.app/",
     }
   ],
   en: [
@@ -420,5 +430,14 @@ export const projects = {
       github: null,
       demo: "https://app.himaif.web.id/",
     },
+    {
+      id: 6,
+      title: "Blue Agency",
+      desc: "This website is a platform designed specifically for the needs of a digital agency. With a professional appearance and modern features, Blue Agency provides complete solutions for client management, projects, and digital services. This platform makes it easier for agencies to showcase their portfolio, manage contact information, and enable potential clients to interact directly with the team.",
+      image: blueAgencyImg, 
+      tags: ["Web Dev", "Digital Agency", "Modern"],
+      github: null,
+      demo: "https://bluegenc.vercel.app/",
+    }
   ]
 };
