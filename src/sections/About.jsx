@@ -55,7 +55,7 @@ const About = () => {
                   Besides coding and interface design, I also hold certification and active experience as a <span className="text-purple-400 font-semibold">Professional Drone Pilot</span>. My interest in UAV (Unmanned Aerial Vehicle) technology often blends with web development, such as when I developed a Geothermal Monitoring Dashboard or contributed to the VTOL division.
                 </p>
                 <p>
-                  My working principle is to always combine creativity with high quality standards (as a Quality Assurance), ensuring every line of code not only works well but also delivers a *"wow-factor"* to its users.
+                  My working principle is to always combine creativity with high quality standards (as a Quality Assurance), ensuring every line of code not only works well but also delivers a "wow-factor" to its users.
                 </p>
               </>
             )}
