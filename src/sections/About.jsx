@@ -40,10 +40,10 @@ const About = () => {
                   Halo! Saya <span className="text-blue-400 font-semibold">{personalData.name}</span>, seorang profesional muda dengan multi-disiplin di bidang teknologi. Fokus utama saya adalah menciptakan pengalaman digital yang menarik, responsif, dan mudah digunakan melalui peran saya sebagai <span className="text-white font-medium">Web Developer</span> dan <span className="text-white font-medium">UI/UX Designer</span>.
                 </p>
                 <p>
-                  Selain berkecimpung di dunia *coding* dan desain antarmuka, saya juga memiliki sertifikasi dan pengalaman aktif sebagai <span className="text-purple-400 font-semibold">Pilot Drone Profesional</span>. Ketertarikan saya pada teknologi UAV (Unmanned Aerial Vehicle) dan pengembangan web sering kali berpadu, seperti saat saya mengembangkan Dasbor Pemantauan Geotermal atau berkontribusi di divisi VTOL.
+                  Selain berkecimpung di dunia <b>coding</b> dan desain antarmuka, saya juga memiliki sertifikasi dan pengalaman aktif sebagai <span className="text-purple-400 font-semibold">Pilot Drone Profesional</span>. Ketertarikan saya pada teknologi UAV (Unmanned Aerial Vehicle) dan pengembangan web sering kali berpadu, seperti saat saya mengembangkan Dasbor Pemantauan Geotermal atau berkontribusi di divisi VTOL.
                 </p>
                 <p>
-                  Prinsip saya dalam bekerja adalah selalu menggabungkan kreativitas dengan standar kualitas yang tinggi (sebagai *Quality Assurance*), memastikan setiap *line of code* tidak hanya bekerja dengan baik, tetapi juga memberikan *"wow-factor"* bagi penggunanya.
+                  Prinsip saya dalam bekerja adalah selalu menggabungkan kreativitas dengan standar kualitas yang tinggi (sebagai Quality Assurance), memastikan setiap line of code tidak hanya bekerja dengan baik, tetapi juga memberikan wow-factor bagi penggunanya.
                 </p>
               </>
             ) : (
@@ -55,7 +55,7 @@ const About = () => {
                   Besides coding and interface design, I also hold certification and active experience as a <span className="text-purple-400 font-semibold">Professional Drone Pilot</span>. My interest in UAV (Unmanned Aerial Vehicle) technology often blends with web development, such as when I developed a Geothermal Monitoring Dashboard or contributed to the VTOL division.
                 </p>
                 <p>
-                  My working principle is to always combine creativity with high quality standards (as a *Quality Assurance*), ensuring every *line of code* not only works well but also delivers a *"wow-factor"* to its users.
+                  My working principle is to always combine creativity with high quality standards (as a Quality Assurance), ensuring every line of code not only works well but also delivers a *"wow-factor"* to its users.
                 </p>
               </>
             )}
