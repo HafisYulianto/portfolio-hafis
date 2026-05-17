@@ -16,7 +16,6 @@ Selamat datang di repositori portofolio web premium milik **Hafis Yulianto**. We
 *   **⏳ Glowing Preloader:** Layar pemuatan awal yang modern dengan animasi detak jantung (*pulse*) untuk menyembunyikan *render delay* dan memberikan kesan profesional.
 *   **🎵 Background Music:** Pemutar musik latar bawaan yang bisa dinyalakan/dimatikan kapan saja langsung dari Navbar.
 *   **📱 Fully Responsive:** Tata letak sempurna mulai dari ukuran layar HP kecil, Tablet, hingga Monitor ultrawide.
-*   **📄 Download CV:** Tombol *Call to Action* (CTA) khusus untuk mengunduh CV secara langsung.
 *   **🚀 SEO Friendly:** Dilengkapi dengan tag *Open Graph* dan Meta Descriptions agar tampilan *preview link* di WhatsApp/Telegram/Sosial Media terlihat sangat menarik.
 
 ---
