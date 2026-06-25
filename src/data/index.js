@@ -12,6 +12,7 @@ import teknoComImg from '../assets/teknocom.png';
 import cvBuilderImg from '../assets/cv-builder.png';
 import transparansiSkorKinerjaImg from '../assets/transparansiSkorKinerja.png';
 import blueAgencyImg from '../assets/blueAgency.png';
+import himaIfImg from '../assets/hima-if.png';
 
 // =================================================================================
 // 1. DATA PERSONAL
@@ -405,6 +406,15 @@ export const projects = {
       tags: ["Web Dev", "Agensi Digital", "Modern"],
       github: null,
       demo: "https://bluegenc.vercel.app/",
+    },
+    {
+     id: 7,
+      title: "HIMA Informatika UTI",
+      desc: "Website resmi Himpunan Mahasiswa Informatika (HIMA Informatika) Universitas Teknokrat Indonesia. Platform ini berfungsi sebagai pusat informasi dan komunikasi organisasi, menyajikan profil kepengurusan, galeri kegiatan, serta berbagai program kerja unggulan untuk memfasilitasi pengembangan potensi akademik dan profesional mahasiswa.",
+      image: himaIfImg, 
+      tags: ["Portal Informasi", "Organisasi Mahasiswa", "Web Dev"],
+      github: null,
+      demo: "https://hima-if.teknokrat.ac.id/",
     }
   ],
   en: [
