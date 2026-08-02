@@ -49,15 +49,15 @@ const Navbar = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex justify-center px-4 ${
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 flex flex-col items-center px-4 ${
         scrolled ? "pt-4" : "pt-6"
       }`}
     >
       <div 
-        className={`flex justify-between items-center transition-all duration-500 mx-auto ${
+        className={`flex justify-between items-center transition-all duration-500 relative z-50 ${
           scrolled 
-            ? "w-full max-w-4xl bg-[#030712]/80 backdrop-blur-2xl border border-white/10 rounded-full px-8 py-3 shadow-[0_20px_40px_rgba(0,0,0,0.8)]" 
-            : "w-full container px-2 py-2 bg-transparent"
+            ? "w-full max-w-4xl bg-[#030712]/80 backdrop-blur-2xl border border-white/10 rounded-full px-6 md:px-8 py-3 shadow-[0_20px_40px_rgba(0,0,0,0.8)]" 
+            : "w-full container px-4 py-2 bg-transparent"
         }`}
       >
         {/* Logo / Nama */}
@@ -83,7 +83,7 @@ const Navbar = () => {
         <div className="flex items-center gap-3">
           <button 
             onClick={toggleLanguage} 
-            className="font-bold text-sm text-gray-300 hover:text-white transition-colors rounded-full border border-white/10 bg-white/5 hover:bg-white/10 w-9 h-9 flex items-center justify-center"
+            className="font-bold text-sm text-gray-300 hover:text-white transition-colors rounded-full border border-white/10 bg-white/5 hover:bg-white/10 w-9 h-9 flex items-center justify-center cursor-pointer"
             title="Toggle Language"
           >
             {language.toUpperCase()}
@@ -91,7 +91,7 @@ const Navbar = () => {
 
           <button 
             onClick={toggleMusic} 
-            className="text-gray-300 hover:text-white transition-colors rounded-full border border-white/10 bg-white/5 hover:bg-white/10 w-9 h-9 flex items-center justify-center"
+            className="text-gray-300 hover:text-white transition-colors rounded-full border border-white/10 bg-white/5 hover:bg-white/10 w-9 h-9 flex items-center justify-center cursor-pointer"
             title="Play/Pause Music"
           >
             {isPlaying ? <Volume2 size={18} className="text-blue-400" /> : <VolumeX size={18} />}
@@ -99,8 +99,12 @@ const Navbar = () => {
 
           {/* Tombol Hamburger (Mobile) */}
           <div className="md:hidden">
-            <button onClick={() => setIsOpen(!isOpen)} className="text-white p-2">
-              {isOpen ? <X size={28} /> : <Menu size={28} />}
+            <button 
+              onClick={() => setIsOpen(!isOpen)} 
+              className="text-white p-2 focus:outline-none cursor-pointer"
+              aria-label="Toggle menu"
+            >
+              {isOpen ? <X size={26} /> : <Menu size={26} />}
             </button>
           </div>
         </div>
@@ -110,18 +114,19 @@ const Navbar = () => {
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="md:hidden bg-gray-900 border-t border-gray-800"
+            initial={{ opacity: 0, y: -10, scale: 0.95 }}
+            animate={{ opacity: 1, y: 0, scale: 1 }}
+            exit={{ opacity: 0, y: -10, scale: 0.95 }}
+            transition={{ duration: 0.2 }}
+            className="w-full max-w-md mt-3 md:hidden bg-[#030712]/95 backdrop-blur-2xl border border-white/10 rounded-2xl p-6 shadow-[0_20px_50px_rgba(0,0,0,0.9)] z-40"
           >
-            <div className="flex flex-col items-center py-4 gap-4">
+            <div className="flex flex-col items-center gap-4">
               {navLinks.map((link) => (
                 <a
                   key={link.name}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className="text-gray-300 hover:text-white text-lg"
+                  className="text-gray-300 hover:text-blue-400 text-lg font-medium tracking-wide transition-colors w-full text-center py-2 border-b border-white/5 last:border-none cursor-pointer"
                 >
                   {link.name}
                 </a>
