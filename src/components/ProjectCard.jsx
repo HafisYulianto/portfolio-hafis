@@ -105,7 +105,7 @@ const ProjectCard = ({ project, index }) => {
                   e.stopPropagation();
                   setIsModalOpen(true);
                 }}
-                className="px-4 py-2 bg-blue-600/90 hover:bg-blue-500 text-white rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg transition-all transform hover:scale-105"
+                className="px-4 py-2 bg-blue-600/90 hover:bg-blue-500 text-white rounded-full text-xs font-semibold flex items-center gap-1.5 shadow-lg transition-all transform hover:scale-105 cursor-pointer"
               >
                 <Info size={14} />
                 {language === 'id' ? "Lihat Detail" : "View Details"}
@@ -117,7 +117,7 @@ const ProjectCard = ({ project, index }) => {
                   target="_blank"
                   rel="noreferrer"
                   onClick={(e) => e.stopPropagation()}
-                  className="p-2.5 bg-white/20 hover:bg-white text-white hover:text-gray-900 rounded-full transition-all backdrop-blur-md"
+                  className="p-2.5 bg-white/20 hover:bg-white text-white hover:text-gray-900 rounded-full transition-all backdrop-blur-md cursor-pointer"
                   title="Live Demo"
                 >
                   <ExternalLink size={16} />
@@ -163,10 +163,10 @@ const ProjectCard = ({ project, index }) => {
         </motion.div>
       </div>
 
-      {/* POP-UP MODAL DETAIL PROYEK */}
+      {/* POP-UP MODAL DETAIL PROYEK (KONSISTEN & SCROLLABLE DESKRIPSI) */}
       <AnimatePresence>
         {isModalOpen && (
-          <div className="fixed inset-0 z-[200] flex items-center justify-center p-4 sm:p-6 overflow-y-auto">
+          <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 overflow-hidden">
             {/* Backdrop Dimmer */}
             <motion.div
               initial={{ opacity: 0 }}
@@ -176,13 +176,13 @@ const ProjectCard = ({ project, index }) => {
               className="fixed inset-0 bg-black/80 backdrop-blur-md"
             />
 
-            {/* Modal Dialog Card */}
+            {/* Modal Dialog Card (Ukuran Konsisten & Responsif) */}
             <motion.div
               initial={{ opacity: 0, scale: 0.9, y: 20 }}
               animate={{ opacity: 1, scale: 1, y: 0 }}
               exit={{ opacity: 0, scale: 0.9, y: 20 }}
               transition={{ type: "spring", duration: 0.4 }}
-              className="relative w-full max-w-2xl bg-[#12131c] border border-white/10 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.3)] z-10 my-8 max-h-[90vh] flex flex-col"
+              className="relative w-full max-w-xl bg-[#12131c] border border-white/10 rounded-3xl overflow-hidden shadow-[0_0_50px_rgba(59,130,246,0.3)] z-10 flex flex-col h-[520px] sm:h-[560px] max-h-[85vh]"
             >
               {/* Tombol Close X */}
               <button
@@ -193,8 +193,8 @@ const ProjectCard = ({ project, index }) => {
                 <X size={20} />
               </button>
 
-              {/* Modal Header & Image */}
-              <div className="relative h-56 sm:h-64 w-full flex-shrink-0 overflow-hidden bg-black/40">
+              {/* Modal Header & Image (Tinggi Tetap) */}
+              <div className="relative h-44 sm:h-48 w-full flex-shrink-0 overflow-hidden bg-black/40">
                 {project.image ? (
                   <img
                     src={project.image}
@@ -203,49 +203,52 @@ const ProjectCard = ({ project, index }) => {
                   />
                 ) : (
                   <div className="w-full h-full bg-gradient-to-br from-indigo-900/30 to-purple-900/20 flex items-center justify-center">
-                    <Folder size={64} className="text-purple-400/80" />
+                    <Folder size={60} className="text-purple-400/80" />
                   </div>
                 )}
                 <div className="absolute inset-0 bg-gradient-to-t from-[#12131c] via-[#12131c]/50 to-transparent" />
               </div>
 
-              {/* Modal Scrollable Content */}
-              <div className="p-6 sm:p-8 -mt-10 relative z-10 overflow-y-auto custom-scrollbar flex-grow">
-                <div className="flex flex-wrap gap-2 mb-3">
+              {/* Modal Content Container */}
+              <div className="p-5 sm:p-6 -mt-8 relative z-10 flex flex-col flex-grow overflow-hidden">
+                
+                {/* Badges / Tags */}
+                <div className="flex flex-wrap gap-2 mb-2 flex-shrink-0">
                   {project.tags.map((tag, idx) => (
                     <span
                       key={idx}
-                      className="text-xs px-3 py-1 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30 font-medium"
+                      className="text-xs px-2.5 py-0.5 bg-blue-500/20 text-blue-300 rounded-full border border-blue-500/30 font-medium"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4 bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
+                {/* Title */}
+                <h3 className="text-xl sm:text-2xl font-bold text-white mb-2 flex-shrink-0 bg-gradient-to-r from-blue-400 via-indigo-300 to-purple-400 bg-clip-text text-transparent">
                   {project.title}
                 </h3>
 
-                {/* Deskripsi Lengkap */}
-                <div className="text-gray-300 text-sm sm:text-base leading-relaxed mb-6 bg-white/[0.03] p-5 rounded-2xl border border-white/[0.05]">
-                  <h4 className="text-xs font-semibold uppercase tracking-wider text-blue-400 mb-2">
+                {/* Box Deskripsi yang BISA DI-SCROLL & Konsisten */}
+                <div className="flex-grow overflow-y-auto modal-scrollbar bg-white/[0.03] p-4 rounded-2xl border border-white/[0.05] my-2 max-h-[160px] sm:max-h-[190px]">
+                  <h4 className="text-[11px] font-semibold uppercase tracking-wider text-blue-400 mb-1 sticky top-0 bg-[#12131c]/90 backdrop-blur-sm py-0.5">
                     {language === 'id' ? "Deskripsi Lengkap Proyek" : "Full Project Overview"}
                   </h4>
-                  <p className="whitespace-pre-line text-gray-300 text-justify">
+                  <p className="whitespace-pre-line text-gray-300 text-xs sm:text-sm leading-relaxed text-justify pr-1">
                     {project.fullDesc || project.desc}
                   </p>
                 </div>
 
-                {/* CTA Action Buttons */}
-                <div className="flex flex-wrap items-center gap-4 pt-4 border-t border-white/10 mt-auto">
+                {/* CTA Action Buttons Footer (Tetap di Bawah) */}
+                <div className="flex flex-wrap items-center gap-3 pt-3 border-t border-white/10 mt-auto flex-shrink-0">
                   {project.demo && (
                     <a
                       href={project.demo}
                       target="_blank"
                       rel="noreferrer"
-                      className="flex-1 min-w-[140px] px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl text-center text-sm shadow-[0_0_20px_rgba(59,130,246,0.4)] flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
+                      className="flex-1 min-w-[130px] px-5 py-2.5 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl text-center text-xs sm:text-sm shadow-[0_0_20px_rgba(59,130,246,0.4)] flex items-center justify-center gap-2 transition-all transform hover:-translate-y-0.5"
                     >
-                      <ExternalLink size={18} />
+                      <ExternalLink size={16} />
                       {language === 'id' ? "Buka Live Demo" : "Visit Live Demo"}
                     </a>
                   )}
@@ -255,20 +258,21 @@ const ProjectCard = ({ project, index }) => {
                       href={project.github}
                       target="_blank"
                       rel="noreferrer"
-                      className="px-6 py-3 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl text-center text-sm border border-white/10 flex items-center justify-center gap-2 transition-all"
+                      className="px-5 py-2.5 bg-white/10 hover:bg-white/20 text-white font-semibold rounded-xl text-center text-xs sm:text-sm border border-white/10 flex items-center justify-center gap-2 transition-all"
                     >
-                      <Github size={18} />
+                      <Github size={16} />
                       {language === 'id' ? "Source Code" : "View Code"}
                     </a>
                   )}
 
                   <button
                     onClick={() => setIsModalOpen(false)}
-                    className="px-6 py-3 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white text-sm font-semibold rounded-xl transition-colors ml-auto cursor-pointer"
+                    className="px-5 py-2.5 bg-white/5 hover:bg-white/10 text-gray-400 hover:text-white text-xs sm:text-sm font-semibold rounded-xl transition-colors ml-auto cursor-pointer"
                   >
                     {language === 'id' ? "Tutup" : "Close"}
                   </button>
                 </div>
+
               </div>
             </motion.div>
           </div>
