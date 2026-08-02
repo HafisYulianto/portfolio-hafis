@@ -56,7 +56,7 @@ const Experience = () => {
                     <span className="text-xs font-semibold text-blue-300 bg-blue-500/10 px-3 py-1 rounded-full mb-4 inline-block border border-blue-500/20">
                       {exp.period}
                     </span>
-                    <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">
+                    <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 text-justify">
                       {exp.desc}
                     </p>
                   </div>
@@ -91,7 +91,7 @@ const Experience = () => {
                     <span className="text-xs font-semibold text-purple-300 bg-purple-500/10 px-3 py-1 rounded-full mb-4 inline-block border border-purple-500/20">
                       {exp.period}
                     </span>
-                    <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300">
+                    <p className="text-gray-400 text-sm leading-relaxed group-hover:text-gray-300 text-justify">
                       {exp.desc}
                     </p>
                   </div>

@@ -38,12 +38,12 @@ const Achievements = () => {
               <div className="p-3 bg-yellow-500/10 rounded-full text-yellow-500 shrink-0">
                 <Trophy size={24} />
               </div>
-              <div>
+              <div className="w-full">
                 <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
                 <p className="text-blue-400 text-sm mb-2 font-medium">
                   {item.issuer} • {item.year}
                 </p>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
+                <p className="text-gray-400 text-sm text-justify">{item.desc}</p>
               </div>
             </motion.div>
           ))}
@@ -76,12 +76,12 @@ const Achievements = () => {
               <div className="p-3 bg-blue-500/10 rounded-full text-blue-500 shrink-0">
                 <Award size={24} />
               </div>
-              <div>
+              <div className="w-full">
                 <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
                 <p className="text-blue-400 text-sm mb-2 font-medium">
                   {item.issuer} • {item.year}
                 </p>
-                <p className="text-gray-400 text-sm">{item.desc}</p>
+                <p className="text-gray-400 text-sm text-justify">{item.desc}</p>
               </div>
             </motion.div>
           ))}

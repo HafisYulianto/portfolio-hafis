@@ -32,7 +32,7 @@ const About = () => {
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
-            className="flex-1 space-y-6 text-gray-300 text-lg leading-relaxed"
+            className="flex-1 space-y-6 text-gray-300 text-lg leading-relaxed text-justify"
           >
             {language === 'id' ? (
               <>
@@ -72,25 +72,25 @@ const About = () => {
             <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all group">
               <Monitor className="text-blue-400 mb-4 group-hover:scale-110 transition-transform" size={32} />
               <h3 className="text-xl font-bold text-white mb-2">Web Development</h3>
-              <p className="text-sm text-gray-400">{language === 'id' ? "Membangun website modern dengan React, Next.js, dan Tailwind." : "Building modern websites with React, Next.js, and Tailwind."}</p>
+              <p className="text-sm text-gray-400 text-justify">{language === 'id' ? "Membangun website modern dengan React, Next.js, dan Tailwind." : "Building modern websites with React, Next.js, and Tailwind."}</p>
             </div>
 
             <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all group">
               <Plane className="text-purple-400 mb-4 group-hover:scale-110 transition-transform" size={32} />
               <h3 className="text-xl font-bold text-white mb-2">Drone Pilot</h3>
-              <p className="text-sm text-gray-400">{language === 'id' ? "Sertifikasi APDI, mengoperasikan drone untuk pemetaan & SAR." : "APDI certified, operating drones for mapping & SAR operations."}</p>
+              <p className="text-sm text-gray-400 text-justify">{language === 'id' ? "Sertifikasi APDI, mengoperasikan drone untuk pemetaan & SAR." : "APDI certified, operating drones for mapping & SAR operations."}</p>
             </div>
 
             <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-indigo-500/50 transition-all group">
               <Target className="text-indigo-400 mb-4 group-hover:scale-110 transition-transform" size={32} />
               <h3 className="text-xl font-bold text-white mb-2">UI/UX Design</h3>
-              <p className="text-sm text-gray-400">{language === 'id' ? "Merancang antarmuka estetis dan pengalaman pengguna yang intuitif." : "Designing aesthetic interfaces and intuitive user experiences."}</p>
+              <p className="text-sm text-gray-400 text-justify">{language === 'id' ? "Merancang antarmuka estetis dan pengalaman pengguna yang intuitif." : "Designing aesthetic interfaces and intuitive user experiences."}</p>
             </div>
 
             <div className="p-6 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 hover:border-blue-300/50 transition-all group">
               <User className="text-blue-300 mb-4 group-hover:scale-110 transition-transform" size={32} />
               <h3 className="text-xl font-bold text-white mb-2">Quality Assurance</h3>
-              <p className="text-sm text-gray-400">{language === 'id' ? "Memastikan performa aplikasi berjalan mulus dan bebas dari bug." : "Ensuring application performance runs smoothly and bug-free."}</p>
+              <p className="text-sm text-gray-400 text-justify">{language === 'id' ? "Memastikan performa aplikasi berjalan mulus dan bebas dari bug." : "Ensuring application performance runs smoothly and bug-free."}</p>
             </div>
           </motion.div>
 
