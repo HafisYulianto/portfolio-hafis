@@ -163,7 +163,7 @@ const ProjectCard = ({ project, index }) => {
         </motion.div>
       </div>
 
-      {/* POP-UP MODAL DETAIL PROYEK (KONSISTEN & SCROLLABLE DESKRIPSI) */}
+      {/* POP-UP MODAL DETAIL PROYEK (KONSISTEN & TANPA TERTINDIH SCROLL) */}
       <AnimatePresence>
         {isModalOpen && (
           <div className="fixed inset-0 z-[200] flex items-center justify-center p-3 sm:p-6 overflow-hidden">
@@ -229,11 +229,13 @@ const ProjectCard = ({ project, index }) => {
                   {project.title}
                 </h3>
 
-                {/* Box Deskripsi yang BISA DI-SCROLL & Konsisten */}
-                <div className="flex-grow overflow-y-auto modal-scrollbar bg-white/[0.03] p-4 rounded-2xl border border-white/[0.05] my-2 max-h-[160px] sm:max-h-[190px]">
-                  <h4 className="text-[11px] font-semibold uppercase tracking-wider text-blue-400 mb-1 sticky top-0 bg-[#12131c]/90 backdrop-blur-sm py-0.5">
-                    {language === 'id' ? "Deskripsi Lengkap Proyek" : "Full Project Overview"}
-                  </h4>
+                {/* Header Label Deskripsi (Di Luar Box Scroll agar Tidak Tertindih) */}
+                <h4 className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-blue-400 mb-1.5 flex-shrink-0">
+                  {language === 'id' ? "Deskripsi Lengkap Proyek" : "Full Project Overview"}
+                </h4>
+
+                {/* Box Teks Deskripsi Scrollable Murni */}
+                <div className="flex-grow overflow-y-auto modal-scrollbar bg-white/[0.03] p-3.5 sm:p-4 rounded-2xl border border-white/[0.05] my-1 max-h-[140px] sm:max-h-[170px]">
                   <p className="whitespace-pre-line text-gray-300 text-xs sm:text-sm leading-relaxed text-justify pr-1">
                     {project.fullDesc || project.desc}
                   </p>
