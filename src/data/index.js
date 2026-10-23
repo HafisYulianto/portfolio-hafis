@@ -192,7 +192,7 @@ export const organizationExperiences = {
     },
     {
       id: 4,
-      role: "Staf Hubungan Luar Incoming",
+      role: "Staf Hubungan Luar",
       company: "Permikomnas",
       period: "2025 - 2026",
       desc: "Membangun relasi dengan organisasi dan instansi eksternal di bidang teknologi dan pendidikan serta mengoordinasikan kerja sama.",
@@ -236,7 +236,7 @@ export const organizationExperiences = {
     },
     {
       id: 4,
-      role: "Incoming External Relations Staff",
+      role: "External Relations Staff",
       company: "Permikomnas",
       period: "2025 - 2026",
       desc: "Built relationships with external organizations and institutions in technology and education, and coordinated partnerships.",
